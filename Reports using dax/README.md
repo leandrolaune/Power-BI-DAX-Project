@@ -29,6 +29,7 @@ In this Power BI project, an analysis of the Buscante book e-commerce was carrie
 Primeiramente realizou-se o carregamento do dataset disponibilizado no arquivo entitulado "data" desse projeto.
 
 Em seguida, criou-se a tabela "registros_livros_marketing" com dados provenientes do time de marketing e a tabela "registros_notas_logisticas", respectivamente presentes na imagem :
+
 **English Version:**
 First, the dataset available in the file titled "data" of this project was loaded.
 
