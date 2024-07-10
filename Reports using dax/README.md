@@ -35,11 +35,11 @@ Next, the table "registros_livros_marketing" was created with data from the mark
 ![alt text](image.png)
 
 **Portuguese Version:**  
-É importante ressaltar a Criação da coluna calculada: "categoria do livro" utilizando dax:  
+É importante ressaltar que Criou-se uma coluna calculada: “categoria do livro” utilizando dax com a vantagem da coluna não aparecer apenas para uma visualização, mas estar disponível para ser utilizada para criar métricas, medidas e colunas calculadas com os dados de logística. O código utilizado foi:
 **English Version:**  
-Creating a new calculated column: "book category" using dax:
+It is important to highlight that a calculated column was created: “book category” using dax with the advantage of the column not only appearing for a visualization, but being available to be used to create metrics, measures and columns calculated with the logistics data.The code used was:
 
-```
+```dax
 
 Categoria do livro = RELATED(registros_livros_marketing[Categoria])
 -- Buscando informação de categoria
