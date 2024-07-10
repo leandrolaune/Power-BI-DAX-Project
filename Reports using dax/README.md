@@ -53,12 +53,12 @@ Establishing a Relationship between both tables in the model view as shown in th
 **English Version:**  
 Creating a new calculated column: "book category" using dax:
 
-´´´
+```
 
 Categoria do livro = RELATED(registros_livros_marketing[Categoria])
 -- Buscando informação de categoria
 
-´´´
+```
 
 ## Aplicando o Primeiro Filtro
 
