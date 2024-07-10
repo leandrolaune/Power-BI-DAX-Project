@@ -141,51 +141,30 @@ The SUMX function was used to iterate over each row in the table, multiplying th
 After formatting the "Unit Price" field as currency and adjusting the measurement format, the resulting table displayed the total revenue for each product, in addition to the grand total. This provided a clear view of monthly revenue.
 ![alt text](image-5.png)
 
+### Calculando a porcentagem de vendas com ALL
+
+### Calculating percentage of sales with ALL
+
 **Portuguese Version:**  
-É importante ressaltar que Criou-se uma coluna calculada: “categoria do livro” utilizando dax com a vantagem da coluna não aparecer apenas para uma visualização, mas estar disponível para ser utilizada para criar métricas, medidas e colunas calculadas com os dados de logística. O código utilizado foi:
-**English Version:**  
-It is important to highlight that a calculated column was created: “book category” using dax with the advantage of the column not only appearing for a visualization, but being available to be used to create metrics, measures and columns calculated with the logistics data.The code used was:
+Para analisar melhor o faturamento, calculou-se a porcentagem de vendas de cada livro. Para isso, foi criada uma medida DAX que ignora filtros de linha.
 
-```dax
+Primeiro, criou-se a medida "Total de Faturamento ALL":
 
-Categoria do livro = RELATED(registros_livros_marketing[Categoria])
--- Buscando informação de categoria
-
+```plaintext
+Total de Faturamento ALL = SUMX(ALL('registro_livros_marketing'), 'registro_livros_marketing'[Quantidade Vendas] * 'registro_livros_marketing'[Preço Unitário])
 ```
 
-**Portuguese Version:**  
-Estabelecendo Relacionamento entre dados do time de logística e de marketing na exibição de modelo conforme a imagem:  
-**English Version:**  
-Establishing a relationship between data from the logistics and marketing team in the model display as shown in the image:  
-![alt text](<bsct relacionamento modelo.png>)
+Essa função `SUMX` calcula o total de faturamento sem considerar os filtros aplicados, utilizando `ALL` para incluir todos os dados da tabela.
 
-**Portuguese Version:**  
-Para reunir informações mais relevantes em relação à demanda de análises criou-se uma tabela com base no relacionamento pre-estabelecido:  
-**English Version:**  
-To gather more relevant information in relation to the demand for analysis, a table was created based on the pre-established relationship:  
-![alt text](image-3.png)
+Em seguida, criou-se a medida "Porcentagem vendas":
 
-### Aplicando Filtro e Combinando fontes de Dados
-
-### Applying Filter and Combining Data Sources
-
-**Portuguese Version:**  
-No projeto, foi realizada a combinação de duas fontes de dados distintas, essencial para unificar diferentes definições de métricas de "quantidade de produtos vendidos" dos times de marketing e logística. Criou-se uma visualização no Power BI para comparar essas métricas. Foram selecionados os campos "ID_Produto" e "ID_Fatura", configurando "ID_Fatura" para "Não resumir".
-
-Criando uma coluna calculada "Quantidade vendida Logística" utilizando DAX , que filtra e conta registros de vendas de acordo com os critérios logísticos:
-
+```plaintext
+Porcentagem vendas = DIVIDE('Medidas'[Total de faturamento], 'Medidas'[Total de Faturamento ALL])
 ```
 
-Quantidade vendida Logística =
-VAR ID_ATUAL = 'registro_notas_logistica'[ID_Produto]
-VAR TABELA_IDS = FILTER('registro_notas_logistica', 'registro_notas_logistica'[ID_Produto] = ID_ATUAL)
-RETURN
-    COUNTROWS(TABELA_IDS)
+A função `DIVIDE` calcula a porcentagem dividindo o faturamento de cada livro pelo total de faturamento.
 
-```
-
-A visualização no Power BI comparou as quantidades registradas pelos dois times, confirmando a consistência dos dados, de acordo com a tabela obtida abaixo. Essa integração permite criar métricas mais precisas e orientadas para a análise de negócios.
-![alt text](image-4.png)  
+O resultado foi formatado como porcentagem, permitindo identificar a contribuição de cada livro para o faturamento total, essencial para análises de marketing e tomada de decisões baseadas em dados.  
 **English Version:**  
 In the project, two distinct data sources were combined, essential to unify different definitions of "quantity of products sold" metrics from the marketing and logistics teams. A visualization was created in Power BI to compare these metrics. The fields "Product_ID" and "Invoice_ID" were selected, setting "Invoice_ID" to "Do not summarize".
 
