@@ -31,9 +31,11 @@ Primeiramente realizou-se o carregamento do dataset disponibilizado no arquivo e
 Em seguida, criou-se a tabela "registros_livros_marketing" com dados provenientes do time de marketing e a tabela "registros_notas_logisticas", respectivamente presentes na imagem :
 
 **English Version:**
+
 First, the dataset available in the file titled "data" of this project was loaded.
 
 Next, the table "registros_livros_marketing" was created with data from the marketing team and the table "registros_notas_logisticas", respectively present in the image:
+
 ![alt text](image.png)
 
 **Portuguese Version:**
