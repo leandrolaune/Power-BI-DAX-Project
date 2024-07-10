@@ -14,15 +14,13 @@ Neste projeto de Power BI, realizou-se uma análise do e-commerce de livros Busc
 
 In this Power BI project, an analysis of the Buscante book e-commerce was carried out. A complete project was developed in Power BI Desktop, with cards, bar and column charts, as well as data segments for interactive filters. Non-native visual resources and indicator and line graphs were used. Sales and customer analyzes were consolidated into a navigable Dashboard. Map graphics were implemented, addressing common and solutions. The result was an interactive and informative Dashboard.
 
-# Funções Básicas da Tabela
+# 1.Funções Básicas da Tabela
 
-# Basic Table Functions
+# 1.Basic Table Functions
 
-## Carregando os Dados e Criando Relacionamentos
+### Carregando os Dados e Criando Relacionamentos
 
-## Loading Data and Creating Relationships
-
-![alt text](image-5.png)
+### Loading Data and Creating Relationships
 
 **Portuguese Version:**
 
