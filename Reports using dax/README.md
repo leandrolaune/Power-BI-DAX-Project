@@ -61,6 +61,8 @@ To gather more relevant information in relation to the demand for analysis, a ta
 
 ### Aplicando Filtro e Combinando fontes de Dados
 
+### Applying Filter and Combining Data Sources
+
 **Portuguese Version:**  
 No projeto, foi realizada a combinação de duas fontes de dados distintas, essencial para unificar diferentes definições de métricas de "quantidade de produtos vendidos" dos times de marketing e logística. Criou-se uma visualização no Power BI para comparar essas métricas. Foram selecionados os campos "ID_Produto" e "ID_Fatura", configurando "ID_Fatura" para "Não resumir".
 
