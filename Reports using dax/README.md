@@ -39,26 +39,18 @@ Next, the table "registros_livros_marketing" was created with data from the mark
 **English Version:**  
 Creating a new calculated column: "book category" using dax:
 
-´Categoria do livro = RELATED(registros_livros_marketing[Categoria])
--- Buscando informação de categoria´
-
-**Portuguese Version:**  
-Estabelecendo Relacionamento entre ambas as tabelas na exibição de modelo conforme a imagem:  
-**English Version:**  
-Establishing a Relationship between both tables in the model view as shown in the image:
-![alt text](<bsct relacionamento modelo.png>)
-
-**Portuguese Version:**  
-É importante ressaltar a Criação da coluna calculada: "categoria do livro" utilizando dax:  
-**English Version:**  
-Creating a new calculated column: "book category" using dax:
-
 ```
 
 Categoria do livro = RELATED(registros_livros_marketing[Categoria])
 -- Buscando informação de categoria
 
 ```
+
+**Portuguese Version:**  
+Estabelecendo Relacionamento entre ambas as tabelas na exibição de modelo conforme a imagem:  
+**English Version:**  
+Establishing a Relationship between both tables in the model view as shown in the image:
+![alt text](<bsct relacionamento modelo.png>)
 
 ## Aplicando o Primeiro Filtro
 
