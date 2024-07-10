@@ -53,7 +53,7 @@ Establishing a Relationship between both tables in the model view as shown in th
 **English Version:**  
 Creating a new calculated column: "book category" using dax:
 
-````Categoria do livro = RELATED(registros_livros_marketing[Categoria])
+´´´Categoria do livro = RELATED(registros_livros_marketing[Categoria])
 -- Buscando informação de categoria```
 
 ## Aplicando o Primeiro Filtro
@@ -145,4 +145,7 @@ A navegabilidade do dashboard é completameente funcional, uma vez que é possí
 ### English Version:
 
 The dashboard's navigability is completely functional, as it is possible to navigate between pages by clicking on the buttons added to the top right corner.
-````
+
+```
+
+```
