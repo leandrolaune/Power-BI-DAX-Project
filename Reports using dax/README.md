@@ -22,37 +22,35 @@ In this Power BI project, an analysis of the Buscante book e-commerce was carrie
 
 ### Loading Data and Creating Relationships
 
-**Portuguese Version:**
-
+**Portuguese Version:**  
 Primeiramente realizou-se o carregamento do dataset disponibilizado no arquivo entitulado "data" desse projeto.
 
 Em seguida, criou-se a tabela "registros_livros_marketing" com dados provenientes do time de marketing e a tabela "registros_notas_logisticas", respectivamente presentes na imagem :
 
-**English Version:**
-
+**English Version:**  
 First, the dataset available in the file titled "data" of this project was loaded.
 
 Next, the table "registros_livros_marketing" was created with data from the marketing team and the table "registros_notas_logisticas", respectively present in the image:
 
 ![alt text](image.png)
 
-**Portuguese Version:**
-É importante ressaltar a Criação da coluna calculada: "categoria do livro" utilizando dax:
-**English Version:**
+**Portuguese Version:**  
+É importante ressaltar a Criação da coluna calculada: "categoria do livro" utilizando dax:  
+**English Version:**  
 Creating a new calculated column: "book category" using dax:
 
 ´Categoria do livro = RELATED(registros_livros_marketing[Categoria])
 -- Buscando informação de categoria´
 
-**Portuguese Version:**
-Estabelecendo Relacionamento entre ambas as tabelas na exibição de modelo conforme a imagem:
-**English Version:**
+**Portuguese Version:**  
+Estabelecendo Relacionamento entre ambas as tabelas na exibição de modelo conforme a imagem:  
+**English Version:**  
 Establishing a Relationship between both tables in the model view as shown in the image:
 ![alt text](<bsct relacionamento modelo.png>)
 
-**Portuguese Version:**
-É importante ressaltar a Criação da coluna calculada: "categoria do livro" utilizando dax:
-**English Version:**
+**Portuguese Version:**  
+É importante ressaltar a Criação da coluna calculada: "categoria do livro" utilizando dax:  
+**English Version:**  
 Creating a new calculated column: "book category" using dax:
 
 ´Categoria do livro = RELATED(registros_livros_marketing[Categoria])
