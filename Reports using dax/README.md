@@ -190,3 +190,9 @@ The result was formatted as a percentage, allowing the contribution of each book
 ### Porcentagem de Vendas em Outro contexto
 
 ### Percentage of Sales in Another Context
+
+**Portuguese Version:**  
+Foi identificada a necessidade de agrupar as porcentagens de vendas para facilitar a análise.Primeiro, selecionou-se a coluna "Categoria" da tabela registro_livros_marketing para agrupar os livros, Depois, adicionaram-se as medidas "Total de faturamento" e "Porcentagem vendas". Essa nova abordagem agregou valor à análise, permitindo identificar quais categorias necessitam de mais investimento em marketing. A imagem da tabela resultante está abaixo da versão em inglês.
+**English Version:**  
+The need to group sales percentages was identified to facilitate analysis. First, the "Category" column of the Registro_livros_marketing table was selected to group the books. Then, the "Total revenue" and "Sales percentage" measures were added. . This new approach added value to the analysis, allowing us to identify which categories require more investment in marketing. The resulting table image is below the English version.  
+![alt text](image-7.png)
