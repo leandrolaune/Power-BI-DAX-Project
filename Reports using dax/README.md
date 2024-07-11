@@ -192,7 +192,36 @@ The result was formatted as a percentage, allowing the contribution of each book
 ### Percentage of Sales in Another Context
 
 **Portuguese Version:**  
-Foi identificada a necessidade de agrupar as porcentagens de vendas para facilitar a análise.Primeiro, selecionou-se a coluna "Categoria" da tabela registro_livros_marketing para agrupar os livros, Depois, adicionaram-se as medidas "Total de faturamento" e "Porcentagem vendas". Essa nova abordagem agregou valor à análise, permitindo identificar quais categorias necessitam de mais investimento em marketing. A imagem da tabela resultante está abaixo da versão em inglês.
+Foi identificada a necessidade de agrupar as porcentagens de vendas para facilitar a análise.Primeiro, selecionou-se a coluna "Categoria" da tabela registro_livros_marketing para agrupar os livros, Depois, adicionaram-se as medidas "Total de faturamento" e "Porcentagem vendas". Essa nova abordagem agregou valor à análise, permitindo identificar quais categorias necessitam de mais investimento em marketing. A imagem da tabela resultante está abaixo da versão em inglês.  
 **English Version:**  
 The need to group sales percentages was identified to facilitate analysis. First, the "Category" column of the Registro_livros_marketing table was selected to group the books. Then, the "Total revenue" and "Sales percentage" measures were added. . This new approach added value to the analysis, allowing us to identify which categories require more investment in marketing. The resulting table image is below the English version.  
 ![alt text](image-7.png)
+
+# Utilizando Função Calculate
+
+# Using Calculate Function
+
+### Criando Medida com Calculate
+
+**Portuguese Version:**  
+Com o intuito de calcular o faturamento total para uma categoria específica, no caso, a categoría de "fantasia", Foi usada a função CALCULATE em DAX. O processo começou com a criação de uma nova medida:
+
+```
+Fantasia Vendas =
+CALCULATE('Medidas'[Total de faturamento],
+FILTER(ALL('registro_livros_marketing'[Categoria]),
+'registro_livros_marketing'[Categoria] = "Fantasia"))
+```
+
+A medida chamou a expressão de faturamento total e aplicou o filtro para considerar apenas a categoria "fantasia".  
+**English Version:**  
+In order to calculate the total revenue for a specific category, in this case, the "fantasy" category, the CALCULATE function in DAX was used. The process began with the creation of a new measure:
+
+```
+Fantasia Vendas =
+CALCULATE('Medidas'[Total de faturamento],
+FILTER(ALL('registro_livros_marketing'[Categoria]),
+'registro_livros_marketing'[Categoria] = "Fantasia"))
+```
+
+The measure called the expression total revenue and applied the filter to consider only the “fantasy” category.
