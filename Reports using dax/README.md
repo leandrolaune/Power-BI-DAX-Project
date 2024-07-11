@@ -164,21 +164,29 @@ Porcentagem vendas = DIVIDE('Medidas'[Total de faturamento], 'Medidas'[Total de 
 
 A função `DIVIDE` calcula a porcentagem dividindo o faturamento de cada livro pelo total de faturamento.
 
-O resultado foi formatado como porcentagem, permitindo identificar a contribuição de cada livro para o faturamento total, essencial para análises de marketing e tomada de decisões baseadas em dados.  
+O resultado foi formatado como porcentagem, permitindo identificar a contribuição de cada livro para o faturamento total, essencial para análises de marketing e tomada de decisões baseadas em dados. A tabela resultante estará logo abaixo da versão em inglês.
 **English Version:**  
-In the project, two distinct data sources were combined, essential to unify different definitions of "quantity of products sold" metrics from the marketing and logistics teams. A visualization was created in Power BI to compare these metrics. The fields "Product_ID" and "Invoice_ID" were selected, setting "Invoice_ID" to "Do not summarize".
+To better analyze revenue, the percentage of sales of each book was calculated. To achieve this, a DAX measure was created that ignores line filters.
 
-Creating a calculated column "Quantity sold Logistics" using DAX, which filters and counts sales records according to logistics criteria:
+First, the "Total ALL Revenue" measure was created:
 
+```plaintext
+Total de Faturamento ALL = SUMX(ALL('registro_livros_marketing'), 'registro_livros_marketing'[Quantidade Vendas] * 'registro_livros_marketing'[Preço Unitário])
 ```
 
-Quantity sold Logistics =
-VAR CURRENT_ID = 'registro_notas_logistica'[Product_ID]
-VAR TABELA_IDS = FILTER('registro_notas_logistica', 'registro_notas_logistica'[ID_Produto] = ID_CURRENT)
-RETURN
-    COUNTROWS(TABLE_IDS)
+This `SUMX` function calculates the total billing without considering the applied filters, using `ALL` to include all data in the table.
 
+Then, the “Sales Percentage” measure was created:
+
+```plaintext
+Porcentagem vendas = DIVIDE('Medidas'[Total de faturamento], 'Medidas'[Total de Faturamento ALL])
 ```
 
-The visualization in Power BI compared the quantities recorded by the two teams, confirming the consistency of the data, according to the table obtained below. This integration allows you to create more accurate and business analysis-oriented metrics.  
-![alt text](image-4.png)
+The `DIVIDE` function calculates the percentage by dividing the revenue of each book by the total revenue.
+
+The result was formatted as a percentage, allowing the contribution of each book to total revenue to be identified, essential for marketing analysis and data-based decision making. Resulting Table:  
+![alt text](image-6.png)
+
+### Porcentagem de Vendas em Outro contexto
+
+### Percentage of Sales in Another Context
