@@ -257,7 +257,7 @@ This measure respects the filters applied in the visualization, showing "fantasy
 
 **Portuguese Version:**  
 Para obter-se novos insights, foi criada uma nova tabela, exibindo o faturamento por editora. Na nova tabela, foram incluídas as colunas "Editora" e "Total de faturamento". Em seguida, adicionou-se a coluna "Fantasia Vendas" para mostrar o faturamento específico de livros de fantasia por editora:  
-![alt text](image-9.png)
+![alt text](image-9.png)  
 Essa nova visualização destacou que a editora Alexandria obteve R$2.820 em vendas de livros de fantasia, enquanto a editora Povo do Livro não teve vendas nessa categoria, proporcionando insights valiosos para a estratégia de negócios.  
 **English Version:**  
 publishing company. In the new table, the "Publisher" and "Total revenue" columns were included. Then, the "Fantasy Sales" column was added to show the specific revenue of fantasy books by publisher. The table resulting from this step is shown in the Portuguese version
