@@ -197,9 +197,9 @@ Foi identificada a necessidade de agrupar as porcentagens de vendas para facilit
 The need to group sales percentages was identified to facilitate analysis. First, the "Category" column of the Registro_livros_marketing table was selected to group the books. Then, the "Total revenue" and "Sales percentage" measures were added. . This new approach added value to the analysis, allowing us to identify which categories require more investment in marketing. The resulting table image is below the English version.  
 ![alt text](image-7.png)
 
-# Utilizando Função Calculate
+# 3.Utilizando Função Calculate
 
-# Using Calculate Function
+# 3.Using Calculate Function
 
 ### Criando Medida com Calculate
 
@@ -213,7 +213,19 @@ FILTER(ALL('registro_livros_marketing'[Categoria]),
 'registro_livros_marketing'[Categoria] = "Fantasia"))
 ```
 
-A medida chamou a expressão de faturamento total e aplicou o filtro para considerar apenas a categoria "fantasia".  
+A medida chamou a expressão de faturamento total e aplicou o filtro para considerar apenas a categoria "fantasia".
+
+Também criou-se uma nova medida, removendo a função ALL:
+
+```
+Fantasia Vendas =
+CALCULATE('Medidas'[Total de faturamento],
+FILTER('registro_livros_marketing',
+    'registro_livros_marketing'[Categoria] = "Fantasia"))
+```
+
+Essa medida respeita os filtros aplicados na visualização, mostrando o faturamento de "fantasia" apenas na linha correspondente. Isso evitou a duplicação de informações e tornou a visualização mais intuitiva. A tabela obtida foi a seguinte:  
+![alt text](image-8.png)  
 **English Version:**  
 In order to calculate the total revenue for a specific category, in this case, the "fantasy" category, the CALCULATE function in DAX was used. The process began with the creation of a new measure:
 
@@ -225,3 +237,14 @@ FILTER(ALL('registro_livros_marketing'[Categoria]),
 ```
 
 The measure called the expression total revenue and applied the filter to consider only the “fantasy” category.
+
+A new measure was also created, removing the ALL function:
+
+```
+Fantasia Vendas =
+CALCULATE('Medidas'[Total de faturamento],
+FILTER('registro_livros_marketing',
+    'registro_livros_marketing'[Categoria] = "Fantasia"))
+```
+
+This measure respects the filters applied in the visualization, showing "fantasy" billing only in the corresponding line. This avoided duplication of information and made visualization more intuitive. The corresponding resulting table is just below the portuguese version.
