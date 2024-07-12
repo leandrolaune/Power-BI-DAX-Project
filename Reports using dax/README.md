@@ -203,6 +203,8 @@ The need to group sales percentages was identified to facilitate analysis. First
 
 ### Criando Medida com Calculate
 
+### Creating Measurement with Calculate
+
 **Portuguese Version:**  
 Com o intuito de calcular o faturamento total para uma categoria específica, no caso, a categoría de "fantasia", Foi usada a função CALCULATE em DAX. O processo começou com a criação de uma nova medida:
 
@@ -248,3 +250,15 @@ FILTER('registro_livros_marketing',
 ```
 
 This measure respects the filters applied in the visualization, showing "fantasy" billing only in the corresponding line. This avoided duplication of information and made visualization more intuitive. The corresponding resulting table is just below the portuguese version.
+
+### Calculate se Adaptando a Mudança de Contexto
+
+### Calculate Adapting to Context Change
+
+**Portuguese Version:**  
+Para obter-se novos insights, foi criada uma nova tabela, exibindo o faturamento por editora. Na nova tabela, foram incluídas as colunas "Editora" e "Total de faturamento". Em seguida, adicionou-se a coluna "Fantasia Vendas" para mostrar o faturamento específico de livros de fantasia por editora:  
+![alt text](image-9.png)
+Essa nova visualização destacou que a editora Alexandria obteve R$2.820 em vendas de livros de fantasia, enquanto a editora Povo do Livro não teve vendas nessa categoria, proporcionando insights valiosos para a estratégia de negócios.  
+**English Version:**  
+publishing company. In the new table, the "Publisher" and "Total revenue" columns were included. Then, the "Fantasy Sales" column was added to show the specific revenue of fantasy books by publisher. The table resulting from this step is shown in the Portuguese version
+This new visualization highlighted that publisher Alexandria had R$2,820 in fantasy book sales, while publisher Povo do Livro had no sales in this category, providing valuable insights for business strategy.
