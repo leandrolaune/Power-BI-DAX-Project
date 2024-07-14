@@ -328,19 +328,15 @@ Após a criação da medida, os dados foram validados e visualizados, mostrando 
 
 A medida criada permite comparações por editora e outras informações relevantes, auxiliando na tomada de decisões estratégicas para a campanha de marketing.
 **English Version:**  
-The request was expanded to include all categories of books in the publisher's analysis. In Power BI, a new matrix view was created to combine publisher and book category positions.
-
-First, the categories were inserted in the rows and the editors in the columns. Next, the total revenue metric was added by dragging the "Total revenue" field to the values ​​section.
-
-To facilitate data reading, a percentage measure was created using DAX, calculating the publisher's revenue ratio within the specific category. The DAX code used was:
+To meet the new marketing demand, the total sales metric was adjusted to include the "Fantasy" and "Mythology and Fantasy" categories. A new measure was created in DAX, called "Total Fantasy Sales", reusing the existing calculation of total revenue, but applying a new filter with the CALCULATE and KEEPFILTERS function:
 
 ```
-Porcentagem =
-VAR TotalDeFaturamentoEditora = 'Medidas'[Total de faturamento]
-VAR TotalDeVendasCategoria = CALCULATE('Medidas'[total de faturamento], ALL (registro_livros_marketing[Categoria]))
-VAR porcentagem = DIVIDE(TotalDeFaturamentoEditora, TotalDeVendasCategoria)
-RETURN
-porcentagem
+Total de vendas Fantasia = CALCULATE(
+   'Medidas'[Total de faturamento],
+     KEEPFILTERS('registro_livros_marketing'[Categoria] in {"Fantasia", "Mitologia e Fantasia"})
+)
 ```
 
-After adjusting the formatting to percentage, it was observed that the percentages did not total 100% within each category. To correct this, the hierarchy was changed, placing the publisher as the first level. Thus, the percentages now correctly represent the distribution within each publisher. As shown in the Portuguese version above.
+After creating the measure, the data was validated and visualized, correctly showing the values ​​of the two specific categories. The visualization has been adjusted to display values ​​in Reais. The resulting table is being displayed in the Portuguese version above
+
+The measure created allows comparisons by publisher and other relevant information, helping to make strategic decisions for the marketing campaign.
