@@ -7,12 +7,9 @@
 # Project Description
 
 **Portuguese Version:**
-
-Neste projeto de Power BI, realizou-se uma análise do e-commerce de livros Buscante. Desenvolveu-se um projeto completo no Power BI Desktop, com cartões, gráficos de barras e colunas, além de segmentos de dados para filtros interativos. Utilizaram-se recursos visuais não nativos e gráficos de indicadores e linha. As análises de vendas e clientes foram consolidadas em um Dashboard navegável. Implementaram-se gráficos de mapas, abordando erros comuns e soluções. O resultado foi um Dashboard interativo e informativo.
-
+Esse projeto em Power Bi foi desenvolvido para atender as demandas da empresa Buscante(empresa não real estabelecida para fins de contextualização), utilizando dados dos times de logística e marketing. O objetivo foi criar medidas analíticas para fornecer insights valiosos às lideranças. Utilizou-se a linguagem DAX, empregando funções como CALCULATE() e DIVIDE() para cálculos avançados e seguros. A combinação dessas funções permitiu gerar insights poderosos, facilitando a visualização de dados complexos. Este projeto resultou em uma análise de dados robusta, melhorando a eficiência operacional e a eficácia das estratégias de marketing da Buscante.  
 **English Version:**
-
-In this Power BI project, an analysis of the Buscante book e-commerce was carried out. A complete project was developed in Power BI Desktop, with cards, bar and column charts, as well as data segments for interactive filters. Non-native visual resources and indicator and line graphs were used. Sales and customer analyzes were consolidated into a navigable Dashboard. Map graphics were implemented, addressing common and solutions. The result was an interactive and informative Dashboard.
+This project in Power Bi was developed to meet the demands of the company Buscante (not a real company established for contextualization purposes), using data from the logistics and marketing teams. The objective was to create analytical measures to provide valuable insights to leaders. The DAX language was used, employing functions such as CALCULATE() and DIVIDE() for advanced and safe calculations. The combination of these functions allowed us to generate powerful insights, facilitating the visualization of complex data. This project resulted in robust data analysis, improving the operational efficiency and effectiveness of Buscante's marketing strategies.
 
 # 1.Funções Básicas da Tabela
 
@@ -25,20 +22,19 @@ In this Power BI project, an analysis of the Buscante book e-commerce was carrie
 **Portuguese Version:**  
 Primeiramente realizou-se o carregamento do dataset disponibilizado no arquivo entitulado "data" desse projeto.
 
-Em seguida, criou-se a tabela "registros_livros_marketing" com dados provenientes do time de marketing e a tabela "registros_notas_logisticas", respectivamente presentes na imagem :
-
+Em seguida, criou-se a tabela "registros_livros_marketing" com dados provenientes do time de marketing e a tabela "registros_notas_logisticas", respectivamente presentes nas imagens :  
+![alt text](image-1.png)
+![alt text](image-2.png)
 **English Version:**  
 First, the dataset available in the file titled "data" of this project was loaded.
 
-Next, the table "registros_livros_marketing" was created with data from the marketing team and the table "registros_notas_logisticas", respectively present in the image:
-
-![alt text](image-1.png)
-![alt text](image-2.png)
+Next, the table "registros_livros_marketing" was created with data from the marketing team and the table "registros_notas_logisticas", respectively present in the images displayed
+in the Portuguese version above:
 
 **Portuguese Version:**  
 É importante ressaltar que Criou-se uma coluna calculada: “categoria do livro” utilizando dax com a vantagem da coluna não aparecer apenas para uma visualização, mas estar disponível para ser utilizada para criar métricas, medidas e colunas calculadas com os dados de logística. O código utilizado foi:  
 **English Version:**  
-It is important to highlight that a calculated column was created: “book category” using dax with the advantage of the column not only appearing for a visualization, but being available to be used to create metrics, measures and columns calculated with the logistics data.The code used was:
+It is important to highlight that a calculated column was created: ““categoria do livro”(book category) using dax with the advantage of the column not only appearing for a visualization, but being available to be used to create metrics, measures and columns calculated with the logistics data.The code used was:
 
 ```dax
 
@@ -49,15 +45,15 @@ Categoria do livro = RELATED(registros_livros_marketing[Categoria])
 
 **Portuguese Version:**  
 Estabelecendo Relacionamento entre dados do time de logística e de marketing na exibição de modelo conforme a imagem:  
+![alt text](<bsct relacionamento modelo.png>)  
 **English Version:**  
-Establishing a relationship between data from the logistics and marketing team in the model display as shown in the image:  
-![alt text](<bsct relacionamento modelo.png>)
+Establishing a relationship between data from the logistics and marketing team in the model display as shown in the image available at the end of the Portuguese version:
 
 **Portuguese Version:**  
 Para reunir informações mais relevantes em relação à demanda de análises criou-se uma tabela com base no relacionamento pre-estabelecido:  
+![alt text](image-3.png)  
 **English Version:**  
-To gather more relevant information in relation to the demand for analysis, a table was created based on the pre-established relationship:  
-![alt text](image-3.png)
+To gather more relevant information in relation to the demand for analysis, a table was created based on the pre-established relationship(image available in the Portuguese version):
 
 ### Aplicando Filtro e Combinando fontes de Dados
 
@@ -81,9 +77,9 @@ RETURN
 A visualização no Power BI comparou as quantidades registradas pelos dois times, confirmando a consistência dos dados, de acordo com a tabela obtida abaixo. Essa integração permite criar métricas mais precisas e orientadas para a análise de negócios.
 ![alt text](image-4.png)  
 **English Version:**  
-In the project, two distinct data sources were combined, essential to unify different definitions of "quantity of products sold" metrics from the marketing and logistics teams. A visualization was created in Power BI to compare these metrics. The fields "Product_ID" and "Invoice_ID" were selected, setting "Invoice_ID" to "Do not summarize".
+In the project, two distinct data sources were combined, essential to unify different definitions of ""quantidade de produtos vendidos"(quantity of products sold) metrics from the marketing and logistics teams. A visualization was created in Power BI to compare these metrics. The fields "ID_Produto"(Product_ID) and "ID_Fatura"(Invoice_ID) were selected, setting "ID_Fatura" to "Do not summarize".
 
-Creating a calculated column "Quantity sold Logistics" using DAX, which filters and counts sales records according to logistics criteria:
+Creating a calculated column "Quantidade vendida Logística"(Quantity sold Logistics) using DAX, which filters and counts sales records according to logistics criteria:
 
 ```
 
@@ -95,8 +91,7 @@ RETURN
 
 ```
 
-The visualization in Power BI compared the quantities recorded by the two teams, confirming the consistency of the data, according to the table obtained below. This integration allows you to create more accurate and business analysis-oriented metrics.  
-![alt text](image-4.png)
+The visualization in Power BI compared the quantities recorded by the two teams, confirming the consistency of the data, according to the table obtained below. This integration allows you to create more accurate and business analysis-oriented metrics. As per the image available in the Portuguese version.
 
 # 2.Combinando Funções
 
@@ -109,7 +104,7 @@ The visualization in Power BI compared the quantities recorded by the two teams,
 **Portuguese Version:**  
 No projeto, foi necessário criar medidas de valor para a liderança, como o total de faturamento.
 
-Primeiro, uma nova página e tabela foram criadas no Power BI para visualizar o total de faturamento. As colunas "ID", "Título" e "Quantidade Vendas" da tabela registro_livros_marketing foram selecionadas.
+Primeiro, uma nova página e tabela foram criadas para visualizar o total de faturamento. As colunas "ID", "Título" e "Quantidade Vendas" da tabela registro_livros_marketing foram selecionadas.
 
 Para calcular o total de faturamento, uma nova tabela chamada "Medidas" foi criada para armazenar as medidas. Em seguida, uma medida chamada "Total de faturamento" foi definida usando DAX:
 
@@ -126,9 +121,9 @@ Após formatar o campo "Preço Unitário" como moeda e ajustar o formato da medi
 **English Version:**  
 In the project, it was necessary to create value measures for leadership, such as total revenue.
 
-First, a new page and table were created in Power BI to visualize total revenue. The "ID", "Title" and "Sales Quantity" columns from the Registro_livros_marketing table were selected.
+First, a new page and table were created to visualize total revenue. The "ID", "Título"(Title) and "Quantidade de Vendas"(Sales Quantity) columns from the Registro_livros_marketing table were selected.
 
-To calculate the total billing, a new table called "Measurements" was created to store the measurements. Next, a measure called "Total Billings" was defined using DAX:
+To calculate the total billing, a new table called "Medidas"(Measurements) was created to store the measurements. Next, a measure called "Total de Faturamento"(Total Billings) was defined using DAX:
 
 ```
 
@@ -138,8 +133,8 @@ Total de faturamento = SUMX('registro_livros_marketing', 'registro_livros_market
 
 The SUMX function was used to iterate over each row in the table, multiplying the quantity of sales by the unit price and summing the results.
 
-After formatting the "Unit Price" field as currency and adjusting the measurement format, the resulting table displayed the total revenue for each product, in addition to the grand total. This provided a clear view of monthly revenue.
-![alt text](image-5.png)
+After formatting the "Preço Unitário"(Unit Price) field as currency and adjusting the measurement format, the resulting table displayed the total revenue for each product, in addition to the grand total. This provided a clear view of monthly revenue.
+the image of the resulting table is shown in the end of the Portuguese version above
 
 ### Calculando a porcentagem de vendas com ALL
 
@@ -164,11 +159,11 @@ Porcentagem vendas = DIVIDE('Medidas'[Total de faturamento], 'Medidas'[Total de 
 
 A função `DIVIDE` calcula a porcentagem dividindo o faturamento de cada livro pelo total de faturamento.
 
-O resultado foi formatado como porcentagem, permitindo identificar a contribuição de cada livro para o faturamento total, essencial para análises de marketing e tomada de decisões baseadas em dados. A tabela resultante estará logo abaixo da versão em inglês.
+O resultado foi formatado como porcentagem, permitindo identificar a contribuição de cada livro para o faturamento total, essencial para análises de marketing e tomada de decisões baseadas em dados. ![alt text](image-6.png)
 **English Version:**  
 To better analyze revenue, the percentage of sales of each book was calculated. To achieve this, a DAX measure was created that ignores line filters.
 
-First, the "Total ALL Revenue" measure was created:
+First, the "Total de Faturamento ALL"(Total ALL Revenue) measure was created:
 
 ```plaintext
 Total de Faturamento ALL = SUMX(ALL('registro_livros_marketing'), 'registro_livros_marketing'[Quantidade Vendas] * 'registro_livros_marketing'[Preço Unitário])
@@ -176,7 +171,7 @@ Total de Faturamento ALL = SUMX(ALL('registro_livros_marketing'), 'registro_livr
 
 This `SUMX` function calculates the total billing without considering the applied filters, using `ALL` to include all data in the table.
 
-Then, the “Sales Percentage” measure was created:
+Then, the "Porcentagem Vendas"(Sales Percentage) measure was created:
 
 ```plaintext
 Porcentagem vendas = DIVIDE('Medidas'[Total de faturamento], 'Medidas'[Total de Faturamento ALL])
@@ -184,8 +179,7 @@ Porcentagem vendas = DIVIDE('Medidas'[Total de faturamento], 'Medidas'[Total de 
 
 The `DIVIDE` function calculates the percentage by dividing the revenue of each book by the total revenue.
 
-The result was formatted as a percentage, allowing the contribution of each book to total revenue to be identified, essential for marketing analysis and data-based decision making. Resulting Table:  
-![alt text](image-6.png)
+The result was formatted as a percentage, allowing the contribution of each book to total revenue to be identified, essential for marketing analysis and data-based decision making. the image of the resulting table is shown in the Portuguese version above.
 
 ### Porcentagem de Vendas em Outro contexto
 
@@ -194,7 +188,7 @@ The result was formatted as a percentage, allowing the contribution of each book
 **Portuguese Version:**  
 Foi identificada a necessidade de agrupar as porcentagens de vendas para facilitar a análise.Primeiro, selecionou-se a coluna "Categoria" da tabela registro_livros_marketing para agrupar os livros, Depois, adicionaram-se as medidas "Total de faturamento" e "Porcentagem vendas". Essa nova abordagem agregou valor à análise, permitindo identificar quais categorias necessitam de mais investimento em marketing. A imagem da tabela resultante está abaixo da versão em inglês.  
 **English Version:**  
-The need to group sales percentages was identified to facilitate analysis. First, the "Category" column of the Registro_livros_marketing table was selected to group the books. Then, the "Total revenue" and "Sales percentage" measures were added. . This new approach added value to the analysis, allowing us to identify which categories require more investment in marketing. The resulting table image is below the English version.  
+The need to group sales percentages was identified to facilitate analysis. First, the "Categoria"(Category) column of the Registro_livros_marketing table was selected to group the books. Then, the "Total de Faturamento"(Total revenue) and "Porentagem Vendas"(Sales percentage) measures were added. . This new approach added value to the analysis, allowing us to identify which categories require more investment in marketing. The resulting table image is below the English version.  
 ![alt text](image-7.png)
 
 # 3.Utilizando Função Calculate
@@ -229,7 +223,7 @@ FILTER('registro_livros_marketing',
 Essa medida respeita os filtros aplicados na visualização, mostrando o faturamento de "fantasia" apenas na linha correspondente. Isso evitou a duplicação de informações e tornou a visualização mais intuitiva. A tabela obtida foi a seguinte:  
 ![alt text](image-8.png)  
 **English Version:**  
-In order to calculate the total revenue for a specific category, in this case, the "fantasy" category, the CALCULATE function in DAX was used. The process began with the creation of a new measure:
+In order to calculate the total revenue for a specific category, in this case, the "fantasy"(Fantasia) category, the CALCULATE function in DAX was used. The process began with the creation of a new measure:
 
 ```
 Fantasia Vendas =
@@ -260,7 +254,7 @@ Para obter-se novos insights, foi criada uma nova tabela, exibindo o faturamento
 ![alt text](image-9.png)  
 Essa nova visualização destacou que a editora Alexandria obteve R$2.820 em vendas de livros de fantasia, enquanto a editora Povo do Livro não teve vendas nessa categoria, proporcionando insights valiosos para a estratégia de negócios.  
 **English Version:**  
-publishing company. In the new table, the "Publisher" and "Total revenue" columns were included. Then, the "Fantasy Sales" column was added to show the specific revenue of fantasy books by publisher. The table resulting from this step is shown in the Portuguese version
+publishing company. In the new table, the "Editora"(Publisher) and "Total de Faturamento"(Total revenue) columns were included. Then, the "Fantasia Vendas"(Fantasy Sales) column was added to show the specific revenue of fantasy books by publisher. The table resulting from this step is shown in the Portuguese version
 This new visualization highlighted that publisher Alexandria had R$2,820 in fantasy book sales, while publisher Povo do Livro had no sales in this category, providing valuable insights for business strategy.
 
 # 4.Transformando Contextos com Calculate
@@ -294,7 +288,7 @@ Essa visualização final permitiu uma análise clara das editoras que mais se d
 **English Version:**  
 The request was expanded to include all categories of books in the publisher's analysis. In Power BI, a new matrix view was created to combine publisher and book category positions.
 
-First, the categories were inserted in the rows and the editors in the columns. Next, the total revenue metric was added by dragging the "Total revenue" field to the values ​​section.
+First, the categories were inserted in the rows and the editors in the columns. Next, the total revenue metric was added by dragging the "Total de Faturamento" field to the values ​​section.
 
 To facilitate data reading, a percentage measure was created using DAX, calculating the publisher's revenue ratio within the specific category. The DAX code used was:
 
@@ -328,7 +322,7 @@ Após a criação da medida, os dados foram validados e visualizados, mostrando 
 
 A medida criada permite comparações por editora e outras informações relevantes, auxiliando na tomada de decisões estratégicas para a campanha de marketing.
 **English Version:**  
-To meet the new marketing demand, the total sales metric was adjusted to include the "Fantasy" and "Mythology and Fantasy" categories. A new measure was created in DAX, called "Total Fantasy Sales", reusing the existing calculation of total revenue, but applying a new filter with the CALCULATE and KEEPFILTERS function:
+To meet the new marketing demand, the total sales metric was adjusted to include the "Fantasia"(Fantasy) and "Mitologia e Fantasia"(Mythology and Fantasy) categories. A new measure was created in DAX, called "Total de Vendas Fantasia"(Total Fantasy Sales), reusing the existing calculation of total revenue, but applying a new filter with the CALCULATE and KEEPFILTERS function:
 
 ```
 Total de vendas Fantasia = CALCULATE(
@@ -340,3 +334,14 @@ Total de vendas Fantasia = CALCULATE(
 After creating the measure, the data was validated and visualized, correctly showing the values ​​of the two specific categories. The visualization has been adjusted to display values ​​in Reais. The resulting table is being displayed in the Portuguese version above
 
 The measure created allows comparisons by publisher and other relevant information, helping to make strategic decisions for the marketing campaign.
+
+# Imagens das Páginas do Projeto Final
+
+# Images of Final Project Pages
+
+![alt text](image-12.png)  
+![alt text](image-13.png)  
+![alt text](image-14.png)  
+![alt text](image-15.png)  
+![alt text](image-16.png)  
+![alt text](image-17.png)
