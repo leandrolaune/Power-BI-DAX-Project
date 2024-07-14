@@ -262,3 +262,85 @@ Essa nova visualização destacou que a editora Alexandria obteve R$2.820 em ven
 **English Version:**  
 publishing company. In the new table, the "Publisher" and "Total revenue" columns were included. Then, the "Fantasy Sales" column was added to show the specific revenue of fantasy books by publisher. The table resulting from this step is shown in the Portuguese version
 This new visualization highlighted that publisher Alexandria had R$2,820 in fantasy book sales, while publisher Povo do Livro had no sales in this category, providing valuable insights for business strategy.
+
+# 4.Transformando Contextos com Calculate
+
+# 4.Transforming Contexts with Calculate
+
+### Mudando o contexto através da viazualização(Matriz)
+
+### Changing the context through visualization (Matrix)
+
+**Portuguese Version:**  
+A solicitação foi ampliada para incluir todas as categorias de livros na análise por editora. No Power BI, foi criada uma nova visualização de matriz para combinar as hierarquias de editora e categoria de livros.
+
+Primeiramente, as categorias foram inseridas nas linhas e as editoras nas colunas. A seguir, foi adicionada a métrica de faturamento total, arrastando o campo de "Total de faturamento" para a seção de valores.
+
+Para facilitar a leitura dos dados, foi criada uma medida de porcentagem utilizando DAX, calculando a relação do faturamento da editora dentro da categoria específica. O código DAX usado foi:
+
+```
+Porcentagem =
+VAR TotalDeFaturamentoEditora = 'Medidas'[Total de faturamento]
+VAR TotalDeVendasCategoria = CALCULATE('Medidas'[total de faturamento], ALL (registro_livros_marketing[Categoria]))
+VAR porcentagem = DIVIDE(TotalDeFaturamentoEditora, TotalDeVendasCategoria)
+RETURN
+porcentagem
+```
+
+Após ajustar a formatação para porcentagem, foi observado que as porcentagens não totalizavam 100% dentro de cada categoria. Para corrigir isso, a hierarquia foi alterada, colocando a editora como o primeiro nível. Assim, as porcentagens passaram a representar corretamente a distribuição dentro de cada editora. Conforme a imagem:
+![alt text](image-10.png)
+
+Essa visualização final permitiu uma análise clara das editoras que mais se destacam em cada categoria, atendendo a demanda inicial e melhorando a interpretação dos dados.
+**English Version:**  
+The request was expanded to include all categories of books in the publisher's analysis. In Power BI, a new matrix view was created to combine publisher and book category positions.
+
+First, the categories were inserted in the rows and the editors in the columns. Next, the total revenue metric was added by dragging the "Total revenue" field to the values ​​section.
+
+To facilitate data reading, a percentage measure was created using DAX, calculating the publisher's revenue ratio within the specific category. The DAX code used was:
+
+```
+Porcentagem =
+VAR TotalDeFaturamentoEditora = 'Medidas'[Total de faturamento]
+VAR TotalDeVendasCategoria = CALCULATE('Medidas'[total de faturamento], ALL (registro_livros_marketing[Categoria]))
+VAR porcentagem = DIVIDE(TotalDeFaturamentoEditora, TotalDeVendasCategoria)
+RETURN
+porcentagem
+```
+
+After adjusting the formatting to percentage, it was observed that the percentages did not total 100% within each category. To correct this, the hierarchy was changed, placing the publisher as the first level. Thus, the percentages now correctly represent the distribution within each publisher. As shown in the Portuguese version above.
+
+### Combinando filtros com KeepFilter
+
+### Combining filters with KeepFilter
+
+**Portuguese Version:**  
+Para atender à nova demanda de marketing, foi ajustada a métrica de total de vendas para incluir as categorias "Fantasia" e "Mitologia e Fantasia". Criou-se uma nova medida no DAX, denominada "Total de Vendas Fantasias", reutilizando o cálculo existente de total de faturamento, mas aplicando um novo filtro com a função CALCULATE e KEEPFILTERS:
+
+```
+Total de vendas Fantasia = CALCULATE(
+   'Medidas'[Total de faturamento],
+     KEEPFILTERS('registro_livros_marketing'[Categoria] in {"Fantasia", "Mitologia e Fantasia"})
+)
+```
+
+Após a criação da medida, os dados foram validados e visualizados, mostrando corretamente os valores das duas categorias específicas. A visualização foi ajustada para exibir os valores em Reais. A tabela resultante foi a seguinte:
+![alt text](image-11.png)
+
+A medida criada permite comparações por editora e outras informações relevantes, auxiliando na tomada de decisões estratégicas para a campanha de marketing.
+**English Version:**  
+The request was expanded to include all categories of books in the publisher's analysis. In Power BI, a new matrix view was created to combine publisher and book category positions.
+
+First, the categories were inserted in the rows and the editors in the columns. Next, the total revenue metric was added by dragging the "Total revenue" field to the values ​​section.
+
+To facilitate data reading, a percentage measure was created using DAX, calculating the publisher's revenue ratio within the specific category. The DAX code used was:
+
+```
+Porcentagem =
+VAR TotalDeFaturamentoEditora = 'Medidas'[Total de faturamento]
+VAR TotalDeVendasCategoria = CALCULATE('Medidas'[total de faturamento], ALL (registro_livros_marketing[Categoria]))
+VAR porcentagem = DIVIDE(TotalDeFaturamentoEditora, TotalDeVendasCategoria)
+RETURN
+porcentagem
+```
+
+After adjusting the formatting to percentage, it was observed that the percentages did not total 100% within each category. To correct this, the hierarchy was changed, placing the publisher as the first level. Thus, the percentages now correctly represent the distribution within each publisher. As shown in the Portuguese version above.
