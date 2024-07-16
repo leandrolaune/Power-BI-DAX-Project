@@ -6,9 +6,9 @@
 
 # Project Description
 
-**Portuguese Version:**
+**Portuguese Version:**  
 Esse projeto em Power Bi foi desenvolvido para atender as demandas da empresa Buscante(empresa não real estabelecida para fins de contextualização), utilizando dados dos times de logística e marketing. O objetivo foi criar medidas analíticas para fornecer insights valiosos às lideranças. Utilizou-se a linguagem DAX, empregando funções como CALCULATE() e DIVIDE() para cálculos avançados e seguros. A combinação dessas funções permitiu gerar insights poderosos, facilitando a visualização de dados complexos. Este projeto resultou em uma análise de dados robusta, melhorando a eficiência operacional e a eficácia das estratégias de marketing da Buscante.  
-**English Version:**
+**English Version:**  
 This project in Power Bi was developed to meet the demands of the company Buscante (not a real company established for contextualization purposes), using data from the logistics and marketing teams. The objective was to create analytical measures to provide valuable insights to leaders. The DAX language was used, employing functions such as CALCULATE() and DIVIDE() for advanced and safe calculations. The combination of these functions allowed us to generate powerful insights, facilitating the visualization of complex data. This project resulted in robust data analysis, improving the operational efficiency and effectiveness of Buscante's marketing strategies.
 
 # 1.Funções Básicas da Tabela
